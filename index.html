@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Stellarium v0.0.1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/style.css">
+    <script src="./js/jquery-3.4.1.min.js"></script>
+    <script src="./js/jquery-ui.min.js"></script>
+    <script src="./js/global.js"></script>
+</head>
+
+<body>
+    <div class='main' id='test-saggitarian'>
+        <div class='board-container'>
+            <div class='board' id='board'>
+            </div>
+        </div>
+        <div class='menu-container'>
+            <div class='menu' id='menu'>
+                <div class='type-text' id='type-text'>
+                    Shiva Class, Saggitarian
+                </div>
+                <div class='traits-text' id='traits-text'>
+                    Terrify
+                </div>
+                <div class='ability-text' id='ability-text'>
+                    <bold>Obliteration:</bold> At the beginning of each combat phase, you may spend 2 energy to destroy an opponents ship.  Maximum 1 use per round.
+                    <br>
+                    <bold>Consumptions:</bold> After an enemy ship has been destroyed you may harvest the remains for scraps and gain 1 credit.  Maximum 1 use per round.
+                </div>
+                <div class='flavour-text' id='flavour-text'>
+                    The Saggitarian's built their Shiva Class ships for one purpose, complete annihiliation.  
+                    The Shiva of Intemperence brought that to a whole new level, it had often been referred to as the ship of death.
+                </div>
+                <div class='card-info' id='card-info'>
+                    Ti#001
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</body>
+
+<div id='test-button' card-value=0>
+    show next
+</div>
+
+
+<script src="./js/board.js"></script>
+<script src="./js/cards.js"></script>
+<script>
+
+    function getUpdatedCardDisplayValue(value) {
+        value++
+        if (value > 3) {
+            value = 0
+        }
+        return value;
+    }
+
+    function getCurrentCardDisplayValue() {
+        return $( "#test-button" ).attr("card-value");
+    }
+
+    function updateCardCSS(cardNumber) {
+        //Update Card Image
+        $("#board").css({"background-image": "url('" + cardStats[cardNumber]["Card-Image"] + "')"});
+
+        //Update Card Name
+        // $("#board").attr("traits-text", "url('" + cardStats[cardNumber]["Card-Name"] + "')");
+
+        //Update Race Image
+        var raceImage = raceStats[cardStats[cardNumber]["Race"]]["Card-Lower-Image"];
+        $("#menu").css({"background": "linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) ), url('" + raceImage + "')", "background-size": "cover"});
+
+        //Update Card Type - need to handle array
+        var types;
+        for (i in cardStats[cardNumber]["Type"]) {
+            if (i == 0) {
+                types = cardStats[cardNumber]["Type"][i];
+            }
+            else {
+                types = types + ", " + cardStats[cardNumber]["Type"][i]
+            }
+            
+        }
+        $("#type-text").text(types);
+
+        //Update Card Traits - need to handle array
+        var traits;
+        for (i in cardStats[cardNumber]["Traits"]) {
+            if (i == 0) {
+                traits = cardStats[cardNumber]["Traits"][i];
+            }
+            else {
+                traits = traits + ", " + cardStats[cardNumber]["Traits"][i]
+            }
+            
+        }
+        $("#traits-text").text(traits);
+
+        //Update Card Abilities - need to handle array
+        $('#ability-text').empty();
+        var abilities;
+        for (i in cardStats[cardNumber]["Abilities"]) {
+            if (i == 0) {
+                abilities = '<bold>' + 
+                    cardStats[cardNumber]["Abilities"][i]["Name"] + 
+                ': </bold>' + cardStats[cardNumber]["Abilities"][i]["Text"];
+            }
+            else {
+                abilities = abilities +  '<br><bold>' + 
+                    cardStats[cardNumber]["Abilities"][i]["Name"] + 
+                ': </bold>' + cardStats[cardNumber]["Abilities"][i]["Text"];
+            }
+
+        }
+        $('#ability-text').html(abilities);
+
+        //Update Card Flavour Text
+        $("#flavour-text").text(cardStats[cardNumber]["Card-Flavour-Text"]);
+
+        //Update Card Number
+        $("#card-info").text(cardStats[cardNumber]["Card-Number"]);
+    }
+
+    $( "#test-button" ).click(function() {
+        $( "#test-button" ).attr("card-value",getUpdatedCardDisplayValue(getCurrentCardDisplayValue()));
+        updateCardCSS(getCurrentCardDisplayValue());
+});
+</script>
+</html>
