@@ -1,0 +1,12 @@
+{
+    "H-U-00001": {
+        "Name": "Innebriated Guard",
+        "Faction": "Humans",
+        "Type": "Unit",
+        "Cost": "2",
+        "Strength": "3",
+        "Defense": "1",
+        "Arrows": [0,1,2],
+        "Keywords": null
+    }
+}

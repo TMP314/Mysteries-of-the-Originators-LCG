@@ -1,0 +1,131 @@
+/*Taken from: https://codepen.io/elbarto84/pen/wrcob */
+
+/*background1-
+https://www.freepik.com/kamranaydinov
+*/
+
+/*background2-
+https://unsplash.com/photos/A_Y7b9d6CJY
+*/
+
+/*background3-
+https://unsplash.com/photos/dLFmwIOGNYo
+*/
+
+/*background4-
+https://unsplash.com/photos/cx90ak4WBFQ
+
+possible other bg4
+https://unsplash.com/photos/Ou8pttKRopM
+*/
+
+
+:root {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body {
+  display: flexbox;
+  width: 600px;
+  height: 800px;
+  background-color: cadetblue;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 4px solid;
+  border-radius: 8px;
+}
+
+.main {
+  height: 100%;
+  background: linear-gradient( rgba(59, 56, 50, 0.7), rgba(0, 0, 0, 0.7) ), url("../backgrounds/4011.jpg");
+  background-size: cover;
+/*background: https://www.freepik.com/sketchepedia */
+}
+
+.header {
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  background-color: darkgrey;
+  font-size: x-large;
+  font-weight: bold;
+ 
+}
+
+.board-container {
+  height: 580px;
+  padding: 10px;
+}
+
+
+.board {
+  height: 100%;
+  width: 100%;
+  background-image: url("../backgrounds/daniel-dociu-spacescene3.jpg");
+  background-size: cover;
+  /* Taken from 
+  https://www.artstation.com/artwork/gByXQ
+  https://cdna.artstation.com/p/assets/images/images/004/586/284/4k/daniel-dociu-spacescene3.jpg?1484773235
+  Not for use, just temporary for inspiration */
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+.menu-container {
+  height: 190px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  
+}
+
+.menu {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) ), url("../backgrounds/bottom-bg0.jpg");
+  background-size: cover;
+  /*background: https://www.freepik.com/kamranaydinov */
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+bold {
+  font-weight: bold;
+}
+
+.type-text {
+  font-style: italic;
+  font-size: medium;
+  text-align: center;
+  height: calc(10% - 10px); 
+  padding: 5px;
+}
+
+.traits-text {
+  font-weight: bold;
+  font-size: medium;
+  text-align: center;
+  height: calc(10% - 10px); 
+  padding: 5px;
+}
+
+.ability-text {
+  font-size: medium;
+  text-align: center;
+  height: calc(58% - 10px);
+  padding: 5px;
+}
+
+.flavour-text {
+  font-style: italic;
+  font-size: small;
+  text-align: center;
+  height: 15%; 
+}
+
+.card-info {
+  font-size: smaller;
+  text-align: right;
+  height: 8%; 
+  margin-right: 4px;
+}
