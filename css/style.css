@@ -26,8 +26,8 @@ https://unsplash.com/photos/Ou8pttKRopM
 
 body {
   display: flexbox;
-  width: 315px;
-  height: 440px;
+  width: calc(63px * 9.0);
+  height: calc(88px * 9.0);
   background-color: cadetblue;
   margin: 0 auto;
   overflow: hidden;
@@ -42,21 +42,11 @@ body {
 /*background: https://www.freepik.com/sketchepedia */
 }
 
-.header {
-  width: 100%;
-  height: 40px;
-  text-align: center;
-  background-color: darkgrey;
-  font-size: x-large;
-  font-weight: bold;
- 
-}
 
 .board-container {
-  height: 580px;
+  height: calc(75% - 20px);
   padding: 10px;
 }
-
 
 .board {
   height: 100%;
@@ -72,7 +62,7 @@ body {
 }
 
 .menu-container {
-  height: 190px;
+  height: calc(25% - 10px);
   padding-bottom: 10px;
   padding-left: 10px;
   padding-right: 10px;
