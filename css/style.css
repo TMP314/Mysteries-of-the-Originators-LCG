@@ -93,7 +93,7 @@ bold {
   font-style: italic;
   font-size: medium;
   text-align: center;
-  height: calc(10% - 10px); 
+  height: calc(9% - 10px); 
   padding: 5px;
 }
 
@@ -101,27 +101,27 @@ bold {
   font-weight: bold;
   font-size: medium;
   text-align: center;
-  height: calc(10% - 10px); 
+  height: calc(9% - 10px); 
   padding: 5px;
 }
 
 .ability-text {
   font-size: medium;
   text-align: center;
-  height: calc(58% - 10px);
+  height: calc(55% - 10px);
   padding: 5px;
 }
 
 .flavour-text {
   font-style: italic;
-  font-size: small;
+  font-size: smaller;
   text-align: center;
-  height: 15%; 
+  height: 22%; 
 }
 
 .card-info {
-  font-size: smaller;
+  font-size: x-small;
   text-align: right;
-  height: 8%; 
+  height: 5%; 
   margin-right: 4px;
 }
