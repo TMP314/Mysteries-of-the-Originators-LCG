@@ -35,13 +35,15 @@ body {
   overflow: hidden;
   border: 4px solid;
   border-radius: 8px;
-  position: fixed;
+  /* position: relative; */
+  left: 50%;
+  right: 50%;
 }
 
 .main {
   height: 100%;
   background: linear-gradient( rgba(59, 56, 50, 0.7), rgba(0, 0, 0, 0.7) ), url("../backgrounds/4011.jpg");
-  background-size: cover;
+  background-size: contain;
 /*background: https://www.freepik.com/sketchepedia */
 }
 
